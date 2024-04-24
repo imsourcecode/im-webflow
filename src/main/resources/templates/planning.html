@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Planning</title>
+</head>
+<body>
+
+<form action="#" th:action="${flowExecutionUrl}" method="post">
+	<p>
+		<label>Target Date</label>
+		<input type="text">
+	</p>
+	<p>
+		<label>Speaker</label>
+		<input type="text">
+	</p>
+	<p>
+		<label>Attendees</label>
+		<input type="text">
+	</p>
+
+	<p>
+		<button name="_eventId_accept" type="submit">Confirm</button>
+		<button name="_eventId_decline" type="submit">Cancel</button>
+	</p>
+</form>
+
+</body>
+</html>
