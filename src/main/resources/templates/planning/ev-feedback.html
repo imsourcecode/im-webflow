@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{layout/landing.html :: //head}">
+	<meta charset="UTF-8">
+	<title>Event Goal</title>
+</head>
+<body th:replace="~{layout/landing.html :: body(~{::tplContent})}">
+
+<div th:fragment="tplContent">
+
+	<form action="#" th:action="${flowExecutionUrl}" method="post">
+		<p>
+			<label>Event Feedback</label>
+			<input type="text">
+		</p>
+
+		<p>
+			<button name="_eventId_next" type="submit">Confirm</button>
+			<button name="_eventId_cancel" type="submit">Cancel</button>
+		</p>
+	</form>
+
+</div>
+</body>
+</html>

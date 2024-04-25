@@ -1,5 +1,6 @@
 package org.im.demo.webflow.config;
 
+import org.im.demo.webflow.handler.PlanningFlowHandler;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.webflow.config.AbstractFlowConfiguration;
@@ -26,7 +27,7 @@ public class WebFlowConfig extends AbstractFlowConfiguration {
 	public FlowDefinitionRegistry flowRegistry(FlowBuilderServices flowBuilderServices) {
 		return getFlowDefinitionRegistryBuilder(flowBuilderServices)
 				.setBasePath("classpath:flows")
-				.addFlowLocation("event-planning.xml", "planningFlow")
+				.addFlowLocation("/event-planning.xml")
 				.build();
 	}
 
@@ -43,6 +44,12 @@ public class WebFlowConfig extends AbstractFlowConfiguration {
 				.setViewFactoryCreator(viewFactoryCreator)
 				.setDevelopmentMode(true)
 				.build();
+	}
+
+	//
+	@Bean(name = "event-planning")
+	public PlanningFlowHandler planningFlowHandler() {
+		return new PlanningFlowHandler();
 	}
 
 	// 19.4. View Resolution

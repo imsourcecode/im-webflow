@@ -37,4 +37,9 @@ public class WebConfig implements WebMvcConfigurer {
 		handlerMapping.setOrder(-1);
 		return handlerMapping;
 	}
+
+	// 20.4.2. Handling Ajax Requests with Spring MVC Controllers
+	// A significant change is the need to remove Tiles which has not migrated to Jakarta EE.
+
+	
 }

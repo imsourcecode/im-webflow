@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Landing Header</title>
+</head>
+<body th:fragment="body(tplContent)">
+
+	<div th:insert="${tplContent}">
+		<p>Landing Content</p>
+	</div>
+
+	<div id="footer">Landing Footer</div>
+</body>
+</html>

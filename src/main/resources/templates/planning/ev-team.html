@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:replace="~{layout/landing.html :: //head}">
+	<meta charset="UTF-8">
+	<title>Event Goal</title>
+</head>
+<body th:replace="~{layout/landing.html :: body(~{::tplContent})}">
+
+<div th:fragment="tplContent">
+
+	<form action="#" th:action="${flowExecutionUrl}" method="post">
+		<p>
+			<label>Team Member</label>
+			<input type="text">
+		</p>
+		<p>
+			<label>Role</label>
+			<input type="text">
+		</p>
+
+		<p>
+			<button name="_eventId_next" type="submit">Venue</button>
+			<button name="_eventId_back" type="submit">Goal</button>
+		</p>
+	</form>
+
+</div>
+</body>
+</html>

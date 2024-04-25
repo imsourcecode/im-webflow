@@ -4,13 +4,56 @@
 	  xsi:schemaLocation="http://www.springframework.org/schema/webflow
                           https://www.springframework.org/schema/webflow/spring-webflow.xsd">
 
-	<view-state id="planning">
-		<transition on="accept" to="confirm"></transition>
-		<transition on="decline" to="cancel" bind="false"></transition>
+	<view-state id="goal" view="/planning/ev-goal">
+		<on-render>
+			<render fragments="body"/>
+		</on-render>
+		<transition on="next" to="team"></transition>
+		<transition on="cancel" to="rejected" bind="false"></transition>
 	</view-state>
 
-	<view-state id="confirm"></view-state>
+	<view-state id="team" view="/planning/ev-team">
+		<on-render>
+			<render fragments="body"/>
+		</on-render>
+		<transition on="next" to="venue"></transition>
+		<transition on="back" to="goal"></transition>
+	</view-state>
 
-	<view-state id="cancel"></view-state>
+	<view-state id="venue" view="/planning/ev-venue">
+		<on-render>
+			<render fragments="body"/>
+		</on-render>
+		<transition on="next" to="agenda"></transition>
+		<transition on="back" to="team"></transition>
+	</view-state>
+
+	<view-state id="agenda" view="/planning/ev-agenda">
+		<on-render>
+			<render fragments="body"/>
+		</on-render>
+		<transition on="next" to="guest"></transition>
+		<transition on="back" to="venue"></transition>
+	</view-state>
+
+	<view-state id="guest" view="/planning/ev-guest">
+		<on-render>
+			<render fragments="body"/>
+		</on-render>
+		<transition on="next" to="feedback"></transition>
+		<transition on="back" to="agenda"></transition>
+	</view-state>
+
+	<view-state id="feedback" view="/planning/ev-feedback">
+		<on-render>
+			<render fragments="body"/>
+		</on-render>
+		<transition on="next" to="details"></transition>
+		<transition on="cancel" to="rejected" bind="false"></transition>
+	</view-state>
+
+	<view-state id="details" view="/planning/details"></view-state>
+
+	<view-state id="rejected" view="/planning/rejected"></view-state>
 
 </flow>
